@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li{
+  list-style-type: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+nav {
+  display: flex ;
+  justify-content: space-around;
+  min-height: 10vh;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgb(182, 230, 8);
+  color: rgb(8, 8, 8);
 }
 
-.App-link {
-  color: #61dafb;
+nav .logo{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+nav .nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  cursor: pointer;
+}
+nav .nav-links .ab{
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom : 1px solid rgb(20, 15, 15);
+
+}
+nav .nav-links .ab:hover{
+  border-bottom : 1px solid white;
+}
+nav .burger {
+  font-size: 30px ;
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media all and (max-width: 700px)
+{
+  nav .burger {
+    cursor: pointer;
+    display: block;
+} 
+nav .nav-links{
+  display: block;
+  position: absolute;
+  justify-content: space-around;
+  height: 80vh;
+  background-color: rgb(216, 247, 105);
+  top: 198px;
+  left: 0;
+  cursor: pointer;
+  transform: translateX(-500px);
+  transition: 0.6s ease-out;
+ 
+} 
+nav .nav-links li{
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid cornsilk;
+}
 }
