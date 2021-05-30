@@ -68,3 +68,7 @@ nav .nav-links li{
   border-bottom: 2px solid cornsilk;
 }
 }
+.trending{
+  color: rgb(8, 226, 241);
+  cursor: pointer;
+}
