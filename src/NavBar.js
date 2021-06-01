@@ -4,8 +4,6 @@ import HomeIcon from '@material-ui/icons/Home';
 
 
 
-
-
 function NavBar() {
     const [open, setOpen] = useState(false)
     return (
