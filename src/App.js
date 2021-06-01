@@ -4,33 +4,42 @@ import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 import Carousel from "./Carousel";
 import Typography from '@material-ui/core/Typography';
-import Home from "./compoments/Home";
-import Schedule from "./compoments/Schedule";
+import Home from "./components/Home";
+import Schedule from "./components/Schedule";
+import Reporter from "./components/Reporter";
+import Contact from "./components/Contact";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import FullArticle from "./FullArticle";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 
 function App() {
   return (
-
+<Router>
+<Switch>
     <div>
-
-      <Router>
+      
         <NavBar />
-        <Switch>
+        <SearchBar />
+        
           <Route exact path="/" component={Home}/>
           <Route exact path="/Schedule" component={Schedule}/>
-        </Switch>
-        <Home />
-        <Schedule />
-      </Router>
-      <SearchBar />
+          <Route exact path="/Reporter" component={Reporter}/>
+          <Route exact path="/Contact" component={Contact}/>
+          <Route exact path="/Signup" component={Signup}/>
+          <Route exact path="/Login" component={Login}/>
+          <Route exact path="/FullArticle" component={FullArticle}/>
+        
+      
       <Typography gutterBottom variant="h1" component="h2" align="center" className="trending">
         Trending
-          </Typography>
+      </Typography>
       <Carousel />
     </div>
-
+    </Switch>
+</Router>
   );
 }
 
