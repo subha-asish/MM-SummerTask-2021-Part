@@ -2,10 +2,11 @@ import React from "react";
 import './App.css';
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
-import Carousel from "./Carousel";
-import Typography from '@material-ui/core/Typography';
 import Home from "./components/Home";
 import Schedule from "./components/Schedule";
+
+
+
 import Reporter from "./components/Reporter";
 import Contact from "./components/Contact";
 import Signup from "./components/Signup";
@@ -20,8 +21,8 @@ function App() {
 <Router>
 <Switch>
     <div>
-      
-        <NavBar />
+    <NavBar />
+       
         <SearchBar />
         
           <Route exact path="/" component={Home}/>
@@ -32,14 +33,10 @@ function App() {
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/FullArticle" component={FullArticle}/>
         
-      
-      <Typography gutterBottom variant="h1" component="h2" align="center" className="trending">
-        Trending
-      </Typography>
-      <Carousel />
     </div>
     </Switch>
 </Router>
+    
   );
 }
 

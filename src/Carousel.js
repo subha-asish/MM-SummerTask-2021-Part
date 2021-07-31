@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100vw",
@@ -24,7 +25,7 @@ function App() {
   return <Container className={classes.root}>
     <Grid container spacing="4" >
       <Grid item sm={3}>
-        <Card>
+        <Card  className={classes.cardd} style ={{backgroundImage: `linear-gradient(to right,#36454F,#4880EC,#019CAD,#B2BEB5)`}}>
           <CardHeader avatar={<Avatar> sp</Avatar>} />
           <CardActionArea>
             <CardContent>
@@ -45,7 +46,7 @@ function App() {
         </Card>
       </Grid>
       <Grid item sm={3}>
-        <Card>
+        <Card style ={{backgroundImage: `linear-gradient(to right,#36454F,#4880EC,#019CAD,#B2BEB5)`}}>
           <CardHeader avatar={<Avatar> sp</Avatar>} />
           <CardActionArea>
             <CardContent>
@@ -65,13 +66,15 @@ function App() {
         </Card>
       </Grid>
       <Grid item sm={3}>
-        <Card>
+        <Card  style ={{backgroundImage: `linear-gradient(to right,#36454F,#4880EC,#019CAD,#B2BEB5)`}}>
           <CardHeader avatar={<Avatar> sp</Avatar>} />
           <CardActionArea>
             <CardContent>
               <CardMedia component="img" image="./corona.jpg" />
               <Typography variant="h5">Title</Typography>
-              <Typography variant="subtitle1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Typography>
+              <Typography variant="subtitle1">A third phase of the deadly novel 
+              coronavirus pandemic is inevitable, claimed K Vijay Raghavan, the 
+              Principal Scientific Advisor</Typography>
 
             </CardContent>
           </CardActionArea>
@@ -83,13 +86,15 @@ function App() {
         </Card>
       </Grid>
       <Grid item sm={3}>
-        <Card>
+        <Card style ={{backgroundImage: `linear-gradient(to right,#36454F,#4880EC,#019CAD,#B2BEB5)`}}>
           <CardHeader avatar={<Avatar> sp</Avatar>} />
           <CardActionArea>
             <CardContent>
               <CardMedia component="img" image="./corona.jpg" />
               <Typography variant="h5">Title</Typography>
-              <Typography variant="subtitle1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Typography>
+              <Typography variant="subtitle1">A third phase of the deadly novel 
+              coronavirus pandemic is inevitable, claimed K Vijay Raghavan, the 
+              Principal Scientific Advisor</Typography>
 
             </CardContent>
           </CardActionArea>

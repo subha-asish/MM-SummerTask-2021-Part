@@ -28,15 +28,18 @@ nav .nav-links{
   justify-content: space-around;
   width: 40%;
   cursor: pointer;
-}
-nav .nav-links .ab{
-  font-size: 18px;
-  font-weight: normal;
-  border-bottom : 1px solid rgb(20, 15, 15);
 
 }
-nav .nav-links .ab:hover{
-  border-bottom : 1px solid white;
+nav  .ab{
+  font-size: 10px;
+  font-weight: normal;
+  border-bottom : 0.5px solid rgb(20, 15, 15);
+  margin-right: 15px;
+}
+
+
+nav  .ab:hover{
+  background: linear-gradient(to top, #dbe2dc,rgb(182, 230, 8));
 }
 nav .burger {
   font-size: 30px ;
@@ -50,7 +53,7 @@ nav .burger {
     display: block;
 } 
 nav .nav-links{
-  display: block;
+  display: inline;
   position: absolute;
   justify-content: space-around;
   height: 80vh;
@@ -69,6 +72,7 @@ nav .nav-links li{
 }
 }
 .trending{
-  color: rgb(8, 226, 241);
+  background: linear-gradient(to top, #04b613, #7aee63,white,orange,#e68231);
   cursor: pointer;
+  color: rgb(79, 82, 241);
 }

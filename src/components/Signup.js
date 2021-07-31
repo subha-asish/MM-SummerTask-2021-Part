@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -7,6 +7,12 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { authunticateSignup } from '../service/api';
+
+
+
+
+
 
 
 
@@ -22,9 +28,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-   form: {
+    form: {
 
-        width: '100%', 
+        width: '100%',
 
         marginTop: theme.spacing(3),
 
@@ -42,7 +48,32 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
 
+
+    const signupUser = async () => {
+        await authunticateSignup(signup);
+    }
+
+
+    const signupInitialValues = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    }
+
+
+    const [signup, setSignup] = useState(signupInitialValues);
+
+
     const classes = useStyles();
+
+
+
+
+    const onInputChange = (e) => {
+        setSignup({ ...signup, [e.target.name]: e.target.value });
+        console.log(signup);
+    }
 
 
 
@@ -55,32 +86,34 @@ export default function SignUp() {
             <div className={classes.paper}>
                 <Typography component="h1" variant="h5">
                     New to NaviNews
-        </Typography>
+                </Typography>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                            <TextField autoComplete="fname" name="firstName" 
-                            variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus />
-                     </Grid>
+                            <TextField onChange={(e) => onInputChange(e)} autoComplete="fname" name="firstName"
+                                variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus />
+                        </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField
-                                variant="outlined" required  fullWidth id="lastName" 
-                                label="Last Name" name="lastName" autoComplete="lname"  />
+                            <TextField onChange={(e) => onInputChange(e)}
+                                variant="outlined" required fullWidth id="lastName"
+                                label="Last Name" name="lastName" autoComplete="lname" />
 
                         </Grid>
 
                         <Grid item xs={12}>
 
-                            <TextField
-                                variant="outlined"  required   fullWidth id="email"label="Email Address"
-                                 name="email" autoComplete="email"
+                            <TextField onChange={(e) => onInputChange(e)}
+                                variant="outlined" required fullWidth id="email" label="Email Address"
+                                name="email" autoComplete="email"
 
                             />
 
                         </Grid>
-                       <Grid item xs={12}>
+                        <Grid item xs={12}>
 
-                            <TextField       variant="outlined"  required 
+                            <TextField variant="outlined" required
+
+                                onChange={(e) => onInputChange(e)}
 
                                 name="password"
 
@@ -98,7 +131,7 @@ export default function SignUp() {
 
                     </Grid>
 
-                    <Button
+                    <Button onClick={() => signupUser()}
 
                         type="submit"
 
@@ -114,7 +147,7 @@ export default function SignUp() {
 
                         Sign Up
 
-          </Button>
+                    </Button>
 
                     <Grid container justify="flex-end">
 
@@ -124,7 +157,7 @@ export default function SignUp() {
 
                                 Already have an account? Sign in
 
-              </Link>
+                            </Link>
 
                         </Grid>
 

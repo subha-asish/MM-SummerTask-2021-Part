@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.white, 0.75),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.black, 0.25),
     },
@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(30),
+      marginRight: theme.spacing(30),
       width: 'auto',
     },
   },
